@@ -1,6 +1,7 @@
 package org.nlt.services;
 
-//Successfully Execute on 02-May-2016
+//Successfully Execute 
+//Change xyz@gmail.com to your According mail address
 import java.io.File;
 import java.util.Properties;
 import javax.activation.DataHandler;
@@ -37,7 +38,7 @@ public class EmailServices
         //compose message  
         try {
             MimeMessage message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("amratjohar13@gmail.com"));  //change accordingly  
+            message.setFrom(new InternetAddress("xyz@gmail.com"));  //change accordingly  
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
             message.setSubject(subject);
             message.setText(text);
@@ -50,12 +51,12 @@ public class EmailServices
     }
 
     private PasswordAuthentication getPasswordAuthonticate() {
-        return new PasswordAuthentication("amratjohar13@gmail.com","nwkkjcsneruorwhq");//change accordingly
+        return new PasswordAuthentication("xyz@gmail.com","nwkkjcsneruorwhq");//change accordingly
                                                                      
     }
     
     public static void main(String[] args) 
     {
-        new EmailServices().sendMail("amratjohar13@gmail.com", "Hello Text Content From Sample Mail", "My Subject");
+        new EmailServices().sendMail("xyz@gmail.com", "Hello Text Content From Sample Mail", "My Subject");
     }
 }
